@@ -1,0 +1,67 @@
+.taskItem {
+  margin: 5px 0;
+}
+
+.taskItemContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.taskTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.expandIcon {
+  cursor: pointer;
+  user-select: none;
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.taskControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.editInput {
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.newSubTaskForm {
+  margin: 10px 0;
+  margin-left: 28px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+button {
+  padding: 4px 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  &:hover {
+      background-color: #0056b3;
+  }
+}
