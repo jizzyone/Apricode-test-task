@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Apricode-test-task/static/css/main.9cf69e16.css",
+    "main.js": "/Apricode-test-task/static/js/main.754ed4f0.js",
+    "index.html": "/Apricode-test-task/index.html",
+    "main.9cf69e16.css.map": "/Apricode-test-task/static/css/main.9cf69e16.css.map",
+    "main.754ed4f0.js.map": "/Apricode-test-task/static/js/main.754ed4f0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9cf69e16.css",
+    "static/js/main.754ed4f0.js"
+  ]
+}
