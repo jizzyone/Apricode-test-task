@@ -3,7 +3,8 @@ import { observer } from "mobx-react-lite";
 import { Task } from "../store/taskStore"
 import { taskStore } from "../store/taskStore";
 import styles from '../styles/TaskList.module.scss';
-import TaskItem from './TaskItem'
+import TaskItem from './TaskItem';
+import ThemeToggle from "./ThemeToggle";
 
 interface TaskListProps {
     onSelectTask: (task: Task | null) => void;
@@ -15,6 +16,7 @@ const TaskList: React.FC<TaskListProps> = observer(({ onSelectTask, onSelectSubT
     const [newTaskTitle, setNewTaskTitle] = useState('');
     const [newSubTask, setNewSubTask] = useState('');
     const [isAddingTask, setIsAddingTask] = useState(false);
+    const [search, setSearch] = useState('');
 
     const handleTaskClick = (task: Task) => {
         onSelectTask(task);
@@ -29,9 +31,27 @@ const TaskList: React.FC<TaskListProps> = observer(({ onSelectTask, onSelectSubT
         }
     };
 
+    // строка поиска
+    const filteredTasks = taskStore.tasks.filter(task => 
+        task.title.toLowerCase().includes(search.toLowerCase()) ||
+        (task.description && task.description.toLowerCase().includes(search.toLowerCase()))
+    );
+
+    
+
     return (
         <div className={styles.taskList}>
             <h1 className={styles.title}>Список задач</h1>
+            <ThemeToggle />
+            <div className={styles.searchContainer}>
+                <input
+                    type="text"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    placeholder="Поиск задач..."
+                    className={styles.searchInput}
+                />
+            </div>
             <div className={styles.addTaskSection}>
                 <button 
                     onClick={() => setIsAddingTask(!isAddingTask)}
@@ -67,7 +87,7 @@ const TaskList: React.FC<TaskListProps> = observer(({ onSelectTask, onSelectSubT
             </div>
 
             <div className={styles.tasksContainer}>
-                {taskStore.tasks.map(task => (
+                {filteredTasks.map(task => (
                     <TaskItem
                         key={task.id}
                         task={task}

@@ -1,0 +1,23 @@
+.themeToggle {
+    margin: 16px 0 16px 0;
+}
+
+.themeSelect {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    &:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px var(--primary-color-alpha);
+    }
+    
+    option {
+        background-color: var(--input-bg);
+        color: var(--input-text);
+    }
+}

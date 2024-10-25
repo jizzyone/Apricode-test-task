@@ -1,15 +1,17 @@
 .taskList {
   padding: 20px;
   width: 100%;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 .title {
   font-size: 24px;
   font-weight: 600;
-  color: #333;
   padding-bottom: 10px;
   border-bottom: 2px solid #eee;
   margin: 0 0 20px 0;
+  color: var(--text-color);
 }
 
 .addTaskSection {
@@ -17,15 +19,16 @@
 }
 
 .addTaskButton {
-  padding: 8px 16px;
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: white;
-  border: none;
+  padding: 8px 16px;
   border-radius: 4px;
+  border: none;
   cursor: pointer;
   
   &:hover {
-      background-color: #0056b3;
+    background-color: #0056b3;
+    opacity: 0.9;
   }
 }
 
@@ -39,8 +42,13 @@
 
 .taskInput {
   padding: 8px;
-  border: 1px solid #ddd;
   border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--border-color);
+  &::placeholder {
+  color: var(--input-placeholder);
+  }
 }
 
 .addButton {
@@ -58,4 +66,64 @@
 
 .tasksContainer {
   margin-top: 20px;
+}
+
+// строка поиска
+
+.searchContainer {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.searchInput {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 50%;
+  
+  &::placeholder {
+      color: var(--input-placeholder);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-alpha)
+  }
+}
+
+:root[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #2c3e50; 
+  --border-color: #e1e4e8;
+  --primary-color: #1a73e8;
+  --primary-color-alpha: rgba(26, 115, 232, 0.2);
+  --secondary-bg: #f8f9fa;
+  --hover-bg: #f1f3f4;
+  --input-bg: #ffffff;
+  --input-text: #2c3e50;
+  --input-placeholder: #94a3b8;
+  --card-bg: #ffffff;
+  --card-border: #e1e4e8;
+  --title-color: #2c3e50;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #1a1b1e;
+  --text-color: #5d5f63; 
+  --border-color: #2f3336;
+  --primary-color: #60a5fa;
+  --title-color: #f7f9fa;
+  --primary-color-alpha: rgba(96, 165, 250, 0.2);
+  --secondary-bg: #242526;
+  --hover-bg: #2d2d2d;
+  --input-bg: #242526;
+  --input-text: #e4e6eb;
+  --input-placeholder: #8b949e;
+  --card-bg: #242526;
+  --card-border: #2f3336;
 }
