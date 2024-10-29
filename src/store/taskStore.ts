@@ -53,12 +53,24 @@ class TaskStore {
 
   checkParentCompletion(tasks: Task[], updatedTask: Task) {
     tasks.forEach(task => {
-      if (task.subtasks.includes(updatedTask)) {
-        const allCompleted = task.subtasks.every(subtask => subtask.completed);
-        task.completed = allCompleted;
-        this.checkParentCompletion(this.tasks, task);
+      const parentTask = this.findParentTask(this.tasks, updatedTask);
+    if (parentTask) {
+      const allCompleted = parentTask.subtasks.every((subtask) => subtask.completed);
+      parentTask.completed = allCompleted;
+      this.checkParentCompletion(this.tasks,parentTask);
       }
     });
+  }
+
+  findParentTask(tasks: Task[], childTask: Task): Task | undefined {
+    for (const task of tasks) {
+      if (task.subtasks.includes(childTask)) {
+        return task;
+      }
+      const found = this.findParentTask(task.subtasks, childTask);
+      if (found) return found;
+    }
+    return undefined;
   }
 
   deleteTask(taskId: string) {
