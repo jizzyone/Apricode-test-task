@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Apricode-test-task/static/css/main.39abb8d3.css",
-    "main.js": "/Apricode-test-task/static/js/main.98867dfd.js",
+    "main.js": "/Apricode-test-task/static/js/main.d620ec5f.js",
     "index.html": "/Apricode-test-task/index.html",
     "main.39abb8d3.css.map": "/Apricode-test-task/static/css/main.39abb8d3.css.map",
-    "main.98867dfd.js.map": "/Apricode-test-task/static/js/main.98867dfd.js.map"
+    "main.d620ec5f.js.map": "/Apricode-test-task/static/js/main.d620ec5f.js.map"
   },
   "entrypoints": [
     "static/css/main.39abb8d3.css",
-    "static/js/main.98867dfd.js"
+    "static/js/main.d620ec5f.js"
   ]
 }
